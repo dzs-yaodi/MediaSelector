@@ -71,7 +71,6 @@
      使用该方法前需要引入gsyVideoPlayer
      
      implementation 'com.github.CarGuo.GSYVideoPlayer:gsyVideoPlayer-java:v7.1.5'
-     
      implementation 'com.github.CarGuo.GSYVideoPlayer:GSYVideoPlayer-exo2:v7.1.5'
      
      选择器架包中使用的是compileOnly，所以需要使用该方法的， 必须自己再引用依赖
