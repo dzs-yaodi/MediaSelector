@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="CameraItemSelectDialogAnim" mce_bogus="1" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/media_dialog_anim_in</item>
+        <item name="android:windowExitAnimation">@anim/media_dialog_anim_out</item>
+    </style>
+
+    <style name="mediaFolderAnimator">
+        <item name="android:windowEnterAnimation">@anim/media_popup_slide_in</item>
+        <item name="android:windowExitAnimation">@anim/media_popup_slide_out</item>
+    </style>
+</resources>

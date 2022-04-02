@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.xw.selector.view.SquareFrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="1dp">
+
+
+    <com.xw.selector.view.SquareImageView
+        android:id="@+id/image_cover"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@mipmap/select_image_default"
+        android:scaleType="centerCrop"
+        />
+
+    <ImageView
+        android:id="@+id/image_check"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_gravity="end"
+        android:padding="5dp"
+        android:src="@mipmap/select_image_check"
+        />
+
+   <LinearLayout
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_gravity="bottom|center_horizontal"
+       android:layout_marginBottom="5dp"
+       android:orientation="horizontal">
+
+       <ImageView
+           android:layout_width="26dp"
+           android:layout_height="26dp"
+           android:src="@mipmap/select_icon_video"
+           android:layout_gravity="center_vertical"
+           />
+
+       <TextView
+           android:id="@+id/tv_duration"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:text="00:00"
+           android:textColor="#fff"
+           android:layout_gravity="center_vertical"
+           android:layout_marginStart="12dp"
+           />
+   </LinearLayout>
+
+</com.xw.selector.view.SquareFrameLayout>

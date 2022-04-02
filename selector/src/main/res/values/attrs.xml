@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="ucrop_UCropView">
+
+        <!--Crop image view-->
+        <attr name="lx_ucrop_aspect_ratio_x" format="float" />
+        <attr name="lx_ucrop_aspect_ratio_y" format="float" />
+
+        <!--Overlay view-->
+        <attr name="lx_ucrop_show_oval_crop_frame" format="boolean" />
+        <attr name="lx_ucrop_oval_dimmed_layer" format="boolean" />
+        <attr name="lx_ucrop_dimmed_color" format="color" />
+
+        <attr name="lx_ucrop_grid_stroke_size" format="dimension" />
+        <attr name="lx_ucrop_grid_color" format="color" />
+        <attr name="lx_ucrop_grid_row_count" format="integer" />
+        <attr name="lx_ucrop_grid_column_count" format="integer" />
+        <attr name="lx_ucrop_show_grid" format="boolean" />
+
+        <attr name="lx_ucrop_frame_stroke_size" format="dimension" />
+        <attr name="lx_ucrop_frame_color" format="color" />
+        <attr name="lx_ucrop_show_frame" format="boolean" />
+    </declare-styleable>
+
+
+</resources>

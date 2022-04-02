@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths>
+    <!--    external-path标签是配置Environment.getExternalStorageDirectory()下的目录-->
+    <!--    具体含义为本app和getExternalStorageDirectory()/Pictures共享,并命名为my_images-->
+    <external-path
+        name="my_images"
+        path="Pictures" />
+
+    <!-- bugly下载路径,/storage/emulated/0/Download/${applicationId}/.beta/apk-->
+    <external-path
+        name="beta_external_path"
+        path="Download/" />
+
+    <!--bugly下载路径,/storage/emulated/0/Android/data/${applicationId}/files/apk/-->
+    <external-path
+        name="beta_external_files_path"
+        path="Android/data/" />
+
+    <external-path
+        name="external_files"
+        path="." />
+</paths>

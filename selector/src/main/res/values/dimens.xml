@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--Crop View-->
+    <dimen name="ucrop_default_crop_grid_stoke_width">1dp</dimen>
+    <dimen name="ucrop_default_crop_frame_stoke_width">1dp</dimen>
+    <dimen name="ucrop_padding_crop_frame">16dp</dimen>
+    <dimen name="higgess_news_base_actionbar_size">48dp</dimen>
+    <dimen name="balst_list_item_margin">6dp</dimen>
+    <dimen name="dialog_text_padding">18dp</dimen>
+
+    <dimen name="custom_video_recycler_indecor">2dp</dimen>
+</resources>

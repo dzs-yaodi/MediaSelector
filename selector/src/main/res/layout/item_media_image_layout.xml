@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.xw.selector.view.SquareFrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="1dp">
+
+
+    <com.xw.selector.view.SquareImageView
+        android:id="@+id/image_cover"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@mipmap/select_image_default"
+        android:scaleType="centerCrop"
+        />
+
+    <ImageView
+        android:id="@+id/iv_item_gif"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@mipmap/select_icon_gif"
+        android:layout_gravity="bottom"
+        android:layout_margin="6dp"
+        />
+
+    <ImageView
+        android:id="@+id/image_check"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_gravity="end"
+        android:padding="5dp"
+        android:src="@mipmap/select_image_check"
+        />
+
+</com.xw.selector.view.SquareFrameLayout>

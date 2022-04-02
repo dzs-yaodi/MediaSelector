@@ -1,0 +1,8 @@
+<resources>
+    <string name="select_image_max">最多选择%1$d张图片</string>
+    <string name="confirm">确定</string>
+    <string name="confirm_msg">确定（%1$d/%2$d）</string>
+    <string name="image_num">%d张</string>
+
+    <string name="all_media">全部</string>
+</resources>
