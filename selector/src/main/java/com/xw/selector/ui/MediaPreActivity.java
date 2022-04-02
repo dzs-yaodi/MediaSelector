@@ -5,6 +5,7 @@ import androidx.viewpager.widget.ViewPager;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -33,6 +34,7 @@ public class MediaPreActivity extends AppCompatActivity {
     private ImageView mImageBack;
 
     private MediaPreAdapter mMediaPreAdapter;
+    private ImageView mImageVideo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +47,7 @@ public class MediaPreActivity extends AppCompatActivity {
         mTvCommit = findViewById(R.id.tv_commit);
         mCheckBox = findViewById(R.id.checkbox);
         mViewPager = findViewById(R.id.viewPager);
+        mImageVideo = findViewById(R.id.image_video);
 
         getDatas();
         setListener();
@@ -113,9 +116,9 @@ public class MediaPreActivity extends AppCompatActivity {
 
     private void checkImgOrVideo(MediaFile mediaFile) {
         if (mediaFile.duration > 0) {
-
+            mImageVideo.setVisibility(View.VISIBLE);
         } else {
-
+            mImageVideo.setVisibility(View.GONE);
         }
     }
 
