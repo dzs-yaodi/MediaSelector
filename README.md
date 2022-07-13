@@ -94,24 +94,15 @@
    Router.getInstance()
    
           .choose(MimeType.ofAll())
-	  
           .showCamera(true)
-	  
           .captureStrategy(new CaptureStrategy(true,getPackageName() + ".MyProvider"))
-	  
           .maxSelectable(9 - list.size())
-	  
-	  
           .addListToSelectPaths(list)
           .imageEngine(new GlideEngine())
-	  
           .startLauncher(result -> {
-	  
               if (result.getData() != null) {
-                
                                             
               }
-	      
           });
    
                       
