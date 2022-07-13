@@ -92,7 +92,6 @@
    处理onActivityResult 过时的问题
    
    Router.getInstance()
-   
           .choose(MimeType.ofAll())
           .showCamera(true)
           .captureStrategy(new CaptureStrategy(true,getPackageName() + ".MyProvider"))
