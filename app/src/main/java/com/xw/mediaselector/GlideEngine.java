@@ -1,4 +1,4 @@
-package com.xw.selector.engine;
+package com.xw.mediaselector;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;
@@ -8,6 +8,7 @@ import android.widget.ImageView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.Priority;
 import com.bumptech.glide.request.RequestOptions;
+import com.xw.selector.engine.ImageEngine;
 
 public class GlideEngine implements ImageEngine {
 

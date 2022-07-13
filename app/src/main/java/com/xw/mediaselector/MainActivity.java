@@ -8,14 +8,12 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.Manifest;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
-import android.widget.Toast;
 
 import com.tbruyelle.rxpermissions2.RxPermissions;
 import com.xw.selector.MediaSelector;
 import com.xw.selector.MimeType;
-import com.xw.selector.engine.GlideEngine;
+import com.xw.selector.Router;
 import com.xw.selector.entity.CaptureStrategy;
 import com.xw.selector.ui.CustomVideoActivity;
 
@@ -50,6 +48,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         gridAdapter = new ImageGridAdapter(list);
         recycler.setAdapter(gridAdapter);
+        Router.getInstance().init(this);
 
         rxPermissions = new RxPermissions(this);
 
@@ -57,6 +56,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.btn_image).setOnClickListener(this);
         findViewById(R.id.btn_video1).setOnClickListener(this);
         findViewById(R.id.btn_video2).setOnClickListener(this);
+        findViewById(R.id.turn).setOnClickListener(this);
+
     }
 
     @Override
@@ -87,15 +88,31 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 .subscribe(granted -> {
                     if (granted) {
                         if (id == R.id.btn_all) {
-                            MediaSelector
-                                    .create(this)
+//                            MediaSelector
+//                                    .create(this)
+//                                    .choose(MimeType.ofAll())
+//                                    .showCamera(true)
+//                                    .captureStrategy(new CaptureStrategy(true,"com.xw.mediaselector.MyProvider"))
+//                                    .maxSelectable(9)
+//                                    .addListToSelectPaths(list)
+//                                    .imageEngine(new GlideEngine())
+//                                    .start(REQUEST_MEDIA);
+                            Router.getInstance()
                                     .choose(MimeType.ofAll())
                                     .showCamera(true)
-                                    .captureStrategy(new CaptureStrategy(true,"com.xw.mediaselector.MyProvider"))
-                                    .maxSelectable(9)
+                                    .captureStrategy(new CaptureStrategy(true,getPackageName() + ".MyProvider"))
+                                    .maxSelectable(9 - list.size())
                                     .addListToSelectPaths(list)
                                     .imageEngine(new GlideEngine())
-                                    .start(REQUEST_MEDIA);
+                                    .startLauncher(result -> {
+                                        if (result.getData() != null) {
+                                            list.clear();
+                                            list.addAll(MediaSelector.obtainPathsResult(result.getData()));
+                                            if (list.size() > 0) {
+                                                gridAdapter.notifyDataSetChanged();
+                                            }
+                                        }
+                                    });
                         } else if (id == R.id.btn_image) {
                             MediaSelector
                                     .create(this)
@@ -127,6 +144,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                                     .addListToSelectPaths(list)
                                     .imageEngine(new GlideEngine())
                                     .start(REQUEST_VIDEO);
+                        } else if (id == R.id.turn) {
+                            startActivity(new Intent(this,MainActivity2.class));
                         }
                     }
                 });

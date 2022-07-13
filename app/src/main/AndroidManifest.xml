@@ -10,22 +10,15 @@
     <uses-permission android:name="android.permission.WRITE_MEDIA_STORAGE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
-    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
-
-    <!--适配Android R包可见性 开始-->
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" /> <!-- 适配Android R包可见性 开始 -->
     <queries package="${applicationId}">
         <intent>
-            <action android:name="android.media.action.IMAGE_CAPTURE">
-
-            </action>
+            <action android:name="android.media.action.IMAGE_CAPTURE"></action>
         </intent>
         <intent>
-            <action android:name="android.media.action.ACTION_VIDEO_CAPTURE">
-
-            </action>
+            <action android:name="android.media.action.ACTION_VIDEO_CAPTURE"></action>
         </intent>
     </queries>
-    <!--适配Android R包可见性 结束-->
 
     <application
         android:allowBackup="true"
@@ -34,7 +27,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        <activity android:name=".MainActivity">
+        <activity
+            android:name=".MainActivity2"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

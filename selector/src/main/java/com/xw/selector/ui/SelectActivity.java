@@ -184,7 +184,7 @@ public class SelectActivity extends AppCompatActivity implements OnCameraListene
                     if (selectList != null && !selectList.isEmpty()) {
                         for (int i = 0; i < selectList.size(); i++) {
                             for (MediaFile file : mediaFileList) {
-                                if (selectList.get(i).equals(file.path)) {
+                                if (file != null && selectList.get(i).equals(file.path)) {
                                     file.checked = true;
                                 }
                             }

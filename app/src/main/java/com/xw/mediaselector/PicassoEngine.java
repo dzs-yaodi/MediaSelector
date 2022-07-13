@@ -1,4 +1,4 @@
-package com.xw.selector.engine;
+package com.xw.mediaselector;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;
@@ -6,6 +6,7 @@ import android.net.Uri;
 import android.widget.ImageView;
 
 import com.squareup.picasso.Picasso;
+import com.xw.selector.engine.ImageEngine;
 
 public class PicassoEngine implements ImageEngine {
 

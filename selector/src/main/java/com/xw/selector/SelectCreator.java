@@ -10,23 +10,31 @@ import androidx.fragment.app.Fragment;
 import com.xw.selector.engine.ImageEngine;
 import com.xw.selector.entity.CaptureStrategy;
 import com.xw.selector.entity.SelectSpec;
+import com.xw.selector.listener.OnActivityResult;
 import com.xw.selector.ui.CustomVideoActivity;
 import com.xw.selector.ui.SelectActivity;
 
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
 
 public class SelectCreator {
 
     private MediaSelector mediaSelector;
     private SelectSpec mSelectSpec;
+    private Router router;
 
     public SelectCreator(MediaSelector mediaSelector, int mediaType) {
         this.mediaSelector = mediaSelector;
         mSelectSpec = SelectSpec.getClearInstance();
         mSelectSpec.mimeType = mediaType;
     }
+
+    public SelectCreator(Router router, int mediaType) {
+        this.router = router;
+        mSelectSpec = SelectSpec.getClearInstance();
+        mSelectSpec.mimeType = mediaType;
+    }
+
 
     public SelectCreator maxSelectable(int maxSelectable) {
         if (maxSelectable < 1) {
@@ -142,5 +150,21 @@ public class SelectCreator {
         } else {
             activity.startActivityForResult(intent,requestCode);
         }
+    }
+
+    public void startLauncher(OnActivityResult activityResult) {
+
+        router.setActivityResult(activityResult);
+        Activity activity = router.getActivity();
+        Intent intent = new Intent();
+
+        if (SelectSpec.getInstance().mimeType == MimeType.ofVideo() &&
+                SelectSpec.getInstance().toCustomVideo && SelectSpec.getInstance().maxSelectable == 1) {
+            intent.setClass(activity, CustomVideoActivity.class);
+        } else {
+            intent.setClass(activity, SelectActivity.class);
+        }
+
+        router.getActivityResult().launch(intent);
     }
 }
