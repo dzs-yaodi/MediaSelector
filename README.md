@@ -22,7 +22,7 @@
 	}
        
         dependencies {
-	        implementation 'com.github.dzs-yaodi:MediaSelector:1.0.0'
+	        implementation 'com.github.dzs-yaodi:MediaSelector:1.0.1'
 	}
        
         
