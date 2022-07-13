@@ -87,7 +87,24 @@
                       .start(REQUEST_VIDEO);
                       
                       
-                      
+   # 1.0.2 版本
+   
+   处理onActivityResult 过时的问题
+   
+   Router.getInstance()
+          .choose(MimeType.ofAll())
+          .showCamera(true)
+          .captureStrategy(new CaptureStrategy(true,getPackageName() + ".MyProvider"))
+          .maxSelectable(9 - list.size())
+          .addListToSelectPaths(list)
+          .imageEngine(new GlideEngine())
+          .startLauncher(result -> {
+              if (result.getData() != null) {
+                
+                                            
+              }
+          });
+   
                       
                       
                       
