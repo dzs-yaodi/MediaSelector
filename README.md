@@ -91,6 +91,9 @@
    
    处理onActivityResult 过时的问题
    
+   使用前先在onCreate方法中初始化注册
+   
+   Router.getInstance().init(this);
    
    	Router.getInstance()
           .choose(MimeType.ofAll())
